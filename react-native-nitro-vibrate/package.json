@@ -1,0 +1,50 @@
+{
+  "name": "react-native-nitro-vibrate",
+  "description": "Access the native haptics interface with React Native.",
+  "version": "0.0.0",
+  "repository": "github:tobua/react-native-vibrate",
+  "homepage": "https://github.com/tobua/react-native-vibrate#readme",
+  "license": "MIT",
+  "author": "Matthias Giger",
+  "scripts": {
+    "clean": "rm -rf android/build node_modules/**/android/build lib nitrogen",
+    "specs": "tsc && nitro-codegen --logLevel=\"debug\""
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.9",
+    "nitro-codegen": "^0.27.3",
+    "react": "^19.1.1",
+    "react-native": "^0.80.2",
+    "react-native-nitro-modules": "^0.27.3",
+    "typescript": "^5.9.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "react-native-nitro-modules": "*"
+  },
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js"
+  },
+  "types": "./lib/index.d.ts",
+  "files": [
+    "src",
+    "lib",
+    "nitrogen",
+    "android",
+    "ios",
+    "cpp",
+    "*.podspec",
+    "nitro.json"
+  ],
+  "keywords": [
+    "react-native",
+    "nitro",
+    "haptic",
+    "haptics",
+    "vibrate",
+    "vibration"
+  ]
+}
