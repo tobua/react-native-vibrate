@@ -1,8 +1,7 @@
 /// <reference types="numic/types" />
 import React from 'react'
-import { StatusBar, StyleSheet, View, Text, Image } from 'react-native'
+import { StatusBar, StyleSheet, View, Text, Button } from 'react-native'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
-import logo from './logo.png'
 import { HybridVibrate } from 'react-native-nitro-vibrate'
 import * as hey from 'react-native-nitro-vibrate'
 
@@ -41,11 +40,10 @@ export function App() {
       <SafeAreaView style={styles.safeArea}>
         <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
         <View style={styles.wrapper}>
-          <Image style={styles.image} source={logo} />
           <Text style={styles.text}>
-            Welcome to <Text style={styles.green}>numic{HybridVibrate.vibrate(5, 6)}</Text>!
+            React Native Vibrate{HybridVibrate.vibrate(5, 6)}
           </Text>
-          <Text style={styles.mode}>Running in {__DEV__ ? 'Debug' : 'Release'} Mode</Text>
+          <Button title="Vibrate" onPress={() => {}} />
         </View>
       </SafeAreaView>
     </SafeAreaProvider>
