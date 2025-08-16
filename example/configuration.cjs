@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = {
     typescript: 'react-native',
     reactNative: { name: 'mobile', displayName: 'mobile' },
-    gitignore: 'numic',
+    gitignore: ['extends:numic', 'patch/*'],
     metro: {
         // Required as package is outside project root.
         watchFolders: [path.resolve(__dirname, '../react-native-nitro-vibrate')],

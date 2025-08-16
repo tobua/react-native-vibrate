@@ -3,9 +3,9 @@ import React from 'react'
 import { StatusBar, StyleSheet, View, Text, Button } from 'react-native'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import { HybridVibrate } from 'react-native-nitro-vibrate'
-import * as hey from 'react-native-nitro-vibrate'
+import * as allExports from 'react-native-nitro-vibrate'
 
-console.log(HybridVibrate.vibrate(5, 6), hey)
+console.log({ allExports })
 
 const styles = StyleSheet.create({
   safeArea: {
@@ -41,9 +41,9 @@ export function App() {
         <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
         <View style={styles.wrapper}>
           <Text style={styles.text}>
-            React Native Vibrate{HybridVibrate.vibrate(5, 6)}
+            React Native Vibrate
           </Text>
-          <Button title="Vibrate" onPress={() => {}} />
+          <Button title="Vibrate" onPress={() => alert(HybridVibrate.vibrate('light'))} />
         </View>
       </SafeAreaView>
     </SafeAreaProvider>

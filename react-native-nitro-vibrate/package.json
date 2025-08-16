@@ -11,11 +11,11 @@
     "specs": "tsc && nitro-codegen --logLevel=\"debug\""
   },
   "devDependencies": {
-    "@types/react": "^19.1.9",
-    "nitro-codegen": "^0.27.3",
-    "react": "^19.1.1",
-    "react-native": "^0.80.2",
-    "react-native-nitro-modules": "^0.27.3",
+    "@types/react": "^19.1.10",
+    "nitro-codegen": "^0.28.0",
+    "react": "19.1.0",
+    "react-native": "^0.81.0",
+    "react-native-nitro-modules": "^0.28.0",
     "typescript": "^5.9.2"
   },
   "peerDependencies": {
