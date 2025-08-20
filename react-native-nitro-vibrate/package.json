@@ -7,16 +7,12 @@
   "license": "MIT",
   "author": "Matthias Giger",
   "scripts": {
-    "clean": "rm -rf android/build node_modules/**/android/build lib nitrogen",
-    "specs": "tsc && nitro-codegen --logLevel=\"debug\""
+    "clean": "rm -rf android/build node_modules/**/android/build nitrogen",
+    "specs": "nitro-codegen --logLevel=\"debug\""
   },
   "devDependencies": {
-    "@types/react": "^19.1.10",
     "nitro-codegen": "^0.28.1",
-    "react": "19.1.0",
-    "react-native": "^0.81.0",
-    "react-native-nitro-modules": "^0.28.1",
-    "typescript": "^5.9.2"
+    "react-native-nitro-modules": "^0.28.1"
   },
   "peerDependencies": {
     "react": "*",
@@ -24,11 +20,11 @@
     "react-native-nitro-modules": "*"
   },
   "type": "module",
-  "main": "./lib/index.js",
+  "main": "./index.ts",
   "exports": {
-    ".": "./lib/index.js"
+    ".": "./index.ts"
   },
-  "types": "./lib/index.d.ts",
+  "types": "./index.ts",
   "files": [
     "src",
     "lib",
