@@ -7,10 +7,9 @@ Access the full native haptics interface on iOS and Android.
 Requires NitroModules `react-native-nitro-modules` installed in your project.
 
 ```ts
-import { Vibrate } from 'react-native-vibrate'
+import { Vibrate } from 'react-native-nitro-vibrate'
 
-Vibrate.short()
-Vibrate.long()
+Vibrate.vibrate('light' | 'medium' | 'heavy' | 'soft' | 'rigid')
 ```
 
 ## Permissions

@@ -1,6 +1,6 @@
 import { NitroModules } from 'react-native-nitro-modules'
-import { type Vibrate } from './specs/Vibrate.nitro'
+import { type Vibrate as Module } from './specs/Vibrate.nitro'
 
 export * from './specs/Vibrate.nitro'
 
-export const HybridVibrate = NitroModules.createHybridObject<Vibrate>('Vibrate')
+export const Vibrate = NitroModules.createHybridObject<Module>('Vibrate')

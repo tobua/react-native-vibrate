@@ -2,7 +2,7 @@
 import React from 'react'
 import { StatusBar, StyleSheet, View, Text, Button } from 'react-native'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
-import { HybridVibrate } from 'react-native-nitro-vibrate'
+import { Vibrate } from 'react-native-nitro-vibrate'
 import * as allExports from 'react-native-nitro-vibrate'
 
 console.log({ allExports })
@@ -43,7 +43,11 @@ export function App() {
           <Text style={styles.text}>
             React Native Vibrate
           </Text>
-          <Button title="Vibrate" onPress={() => alert(HybridVibrate.vibrate('light'))} />
+          <Button title="Vibrate Light" onPress={() => alert(Vibrate.vibrate('light'))} />
+          <Button title="Heavy" onPress={() => Vibrate.vibrate('heavy')} />
+          <Button title="medium" onPress={() => Vibrate.vibrate('medium')} />
+          <Button title="rigid" onPress={() => Vibrate.vibrate('rigid')} />
+          <Button title="soft" onPress={() => Vibrate.vibrate('soft')} />
         </View>
       </SafeAreaView>
     </SafeAreaProvider>

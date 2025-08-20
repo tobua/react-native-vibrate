@@ -7,9 +7,9 @@
   "dependencies": {
     "react": "19.1.0",
     "react-native": "^0.81.0",
-    "react-native-nitro-modules": "^0.28.0",
+    "react-native-nitro-modules": "^0.28.1",
     "react-native-nitro-vibrate": "../react-native-nitro-vibrate",
-    "react-native-safe-area-context": "^5.6.0"
+    "react-native-safe-area-context": "^5.6.1"
   },
   "devDependencies": {
     "@types/react": "^19.1.10",
