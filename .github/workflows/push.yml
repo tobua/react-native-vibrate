@@ -1,0 +1,24 @@
+name: push
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test-build-publish-release:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./react-native-nitro-vibrate
+    permissions:
+      id-token: write
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install
+      - run: bun specs # Generate nitro native specifications.
+      - name: 📢 Release
+        uses: tobua/release-npm-action@v3
+        with:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

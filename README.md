@@ -14,7 +14,7 @@ Vibrate.vibrate('light' | 'medium' | 'heavy' | 'soft' | 'rigid')
 
 ## Permissions
 
-Haptics requires Vibration permission, add this to your `AndroidManifest.xml`:
+Haptics requires Vibration permissions on Android, add this to your `AndroidManifest.xml`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

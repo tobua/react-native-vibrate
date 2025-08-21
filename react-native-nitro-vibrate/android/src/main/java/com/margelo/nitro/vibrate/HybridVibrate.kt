@@ -30,27 +30,29 @@ class HybridVibrate: HybridVibrateSpec() {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val effect = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                val predefined = when (impact) {
-                    ImpactStyle.LIGHT, ImpactStyle.SOFT -> VibrationEffect.EFFECT_TICK
-                    ImpactStyle.MEDIUM, ImpactStyle.RIGID -> VibrationEffect.EFFECT_CLICK
-                    ImpactStyle.HEAVY -> VibrationEffect.EFFECT_HEAVY_CLICK
+                // On newer Android versions, EFFECT_TICK can be imperceptible on many devices.
+                // Use a custom one-shot for LIGHT/SOFT to ensure a perceptible haptic tap.
+                when (impact) {
+                    ImpactStyle.LIGHT, ImpactStyle.SOFT -> VibrationEffect.createOneShot(25, 110)
+                    ImpactStyle.MEDIUM, ImpactStyle.RIGID -> VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK)
+                    ImpactStyle.HEAVY -> VibrationEffect.createPredefined(VibrationEffect.EFFECT_HEAVY_CLICK)
                 }
-                VibrationEffect.createPredefined(predefined)
             } else {
-                val amplitude = when (impact) {
-                    ImpactStyle.LIGHT, ImpactStyle.SOFT -> 40
-                    ImpactStyle.MEDIUM, ImpactStyle.RIGID -> 100
-                    ImpactStyle.HEAVY -> 180
+                // For O..P, increase amplitude/duration slightly to improve perception across devices.
+                val (durationMs, amplitude) = when (impact) {
+                    ImpactStyle.LIGHT, ImpactStyle.SOFT -> 25L to 80
+                    ImpactStyle.MEDIUM, ImpactStyle.RIGID -> 35L to 140
+                    ImpactStyle.HEAVY -> 45L to 200
                 }
-                VibrationEffect.createOneShot(20, amplitude)
+                VibrationEffect.createOneShot(durationMs, amplitude)
             }
             vibrator.vibrate(effect)
         } else {
             @Suppress("DEPRECATION")
             val durationMs = when (impact) {
-                ImpactStyle.LIGHT, ImpactStyle.SOFT -> 10L
-                ImpactStyle.MEDIUM, ImpactStyle.RIGID -> 20L
-                ImpactStyle.HEAVY -> 30L
+                ImpactStyle.LIGHT, ImpactStyle.SOFT -> 20L
+                ImpactStyle.MEDIUM, ImpactStyle.RIGID -> 30L
+                ImpactStyle.HEAVY -> 40L
             }
             @Suppress("DEPRECATION")
             vibrator.vibrate(durationMs)
