@@ -1,0 +1,49 @@
+{
+  "name": "react-native-vibrate",
+  "description": "Access the native haptics interface with React Native.",
+  "version": "0.0.0",
+  "repository": "github:tobua/react-native-vibrate",
+  "homepage": "https://github.com/tobua/react-native-vibrate#readme",
+  "license": "MIT",
+  "author": "Matthias Giger",
+  "peerDependencies": {
+    "react": "^19.1.1",
+    "react-native": "^0.81.0"
+  },
+  "type": "module",
+  "main": "./index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "types": "./index.ts",
+  "files": [
+    "android",
+    "ios",
+    "*.ts",
+    "*.podspec"
+  ],
+  "keywords": [
+    "react-native",
+    "haptic",
+    "haptics",
+    "vibrate",
+    "vibration"
+  ],
+  "react-native": {
+    "android": {
+      "package": "com.tobua.vibrate.VibratePackage"
+    }
+  },
+  "codegenConfig": {
+        "libraries": [
+            {
+                "name": "VibrateModule",
+                "type": "modules",
+                "jsSrcsDir": ".",
+                "android": {
+                    "javaPackageName": "com.tobua.vibrate"
+                }
+            }
+        ]
+    },
+}

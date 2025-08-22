@@ -3,9 +3,7 @@ import React from 'react'
 import { StatusBar, StyleSheet, View, Text, Button } from 'react-native'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import { Vibrate } from 'react-native-nitro-vibrate'
-import * as allExports from 'react-native-nitro-vibrate'
-
-console.log({ allExports })
+import { vibrate } from 'react-native-vibrate'
 
 const styles = StyleSheet.create({
   safeArea: {
@@ -48,6 +46,7 @@ export function App() {
           <Button title="medium" onPress={() => Vibrate.vibrate('medium')} />
           <Button title="rigid" onPress={() => Vibrate.vibrate('rigid')} />
           <Button title="soft" onPress={() => Vibrate.vibrate('soft')} />
+          <Button title="Regular Module" onPress={() => vibrate('medium')} />
         </View>
       </SafeAreaView>
     </SafeAreaProvider>

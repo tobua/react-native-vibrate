@@ -6,10 +6,14 @@ module.exports = {
     gitignore: ['extends:numic', 'patch/*'],
     metro: {
         // Required as package is outside project root.
-        watchFolders: [path.resolve(__dirname, '../react-native-nitro-vibrate')],
+        watchFolders: [path.resolve(__dirname, '../react-native-nitro-vibrate'),
+            path.resolve(__dirname, '../react-native-vibrate')
+        ],
         resolver: {
             // Symlinks will not work properly, link to source directly.
-            extraNodeModules:[path.join(__dirname, '../react-native-nitro-vibrate')],
+            extraNodeModules:[path.join(__dirname, '../react-native-nitro-vibrate'),
+                path.join(__dirname, '../react-native-vibrate')
+            ],
             // Ensure symlinked modules are resolved (not working, no effect).
             unstable_enableSymlinks: true,
             unstable_enablePackageExports: true,
