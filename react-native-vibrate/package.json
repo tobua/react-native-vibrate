@@ -20,7 +20,8 @@
     "android",
     "ios",
     "*.ts",
-    "*.podspec"
+    "*.podspec",
+    "react-native.config.js"
   ],
   "keywords": [
     "react-native",
@@ -35,15 +36,15 @@
     }
   },
   "codegenConfig": {
-        "libraries": [
-            {
-                "name": "VibrateModule",
-                "type": "modules",
-                "jsSrcsDir": ".",
-                "android": {
-                    "javaPackageName": "com.tobua.vibrate"
-                }
-            }
-        ]
-    },
+    "libraries": [
+      {
+        "name": "Vibrate",
+        "type": "modules",
+        "jsSrcsDir": ".",
+        "android": {
+          "javaPackageName": "com.tobua.vibrate"
+        }
+      }
+    ]
+  }
 }

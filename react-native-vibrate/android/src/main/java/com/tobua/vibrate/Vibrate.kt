@@ -5,8 +5,9 @@ import android.os.VibrationEffect
 import android.os.Vibrator
 import android.os.VibratorManager
 import com.facebook.react.bridge.*
+import com.facebook.react.turbomodule.core.interfaces.TurboModule
 
-class VibrateModule(private val reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
+class Vibrate(private val reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext), TurboModule {
     override fun getName() = "Vibrate"
 
     @ReactMethod
@@ -20,11 +21,11 @@ class VibrateModule(private val reactContext: ReactApplicationContext) : ReactCo
             }
 
             val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                val manager = reactContext.getSystemService(ReactApplicationContext.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+                val manager = reactContext.getSystemService(android.content.Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
                 manager.defaultVibrator
             } else {
                 @Suppress("DEPRECATION")
-                reactContext.getSystemService(ReactApplicationContext.VIBRATOR_SERVICE) as Vibrator
+                reactContext.getSystemService(android.content.Context.VIBRATOR_SERVICE) as Vibrator
             }
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
