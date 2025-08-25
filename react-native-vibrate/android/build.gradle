@@ -3,15 +3,10 @@ apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
 
 // https://github.com/Modrigue/ReactNativeTurboModuleKotlin/blob/main/android/app/build.gradle
-react {
-    // autolinkLibrariesWithApp()
-}
+react {}
 
 android {
     namespace "com.tobua.vibrate"
-
-    // ndkVersion rootProject.ext.ndkVersion
-    // buildToolsVersion rootProject.ext.buildToolsVersion
 
     compileSdkVersion rootProject.hasProperty('compileSdkVersion') ? rootProject.compileSdkVersion : 36
 

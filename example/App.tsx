@@ -20,9 +20,12 @@ const styles = StyleSheet.create({
     height: 100,
     marginTop: 40,
   },
-  text: {
+  title: {
     fontWeight: 'bold',
     fontSize: 20,
+  },
+  text: {
+    fontSize: 16,
   },
   mode: {
     fontSize: 16,
@@ -38,15 +41,23 @@ export function App() {
       <SafeAreaView style={styles.safeArea}>
         <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
         <View style={styles.wrapper}>
-          <Text style={styles.text}>
+          <Text style={styles.title}>
             React Native Vibrate
+          </Text>
+          <Text style={styles.text}>
+            Regular
+          </Text>
+          <Button title="Heavy" onPress={() => vibrate('heavy')} />
+          <Button title="Medium" onPress={() => vibrate('medium')} />
+          <Button title="Light" onPress={() => vibrate('light')} />
+          <Text style={styles.text}>
+            Nitro
           </Text>
           <Button title="Vibrate Light" onPress={() => alert(Vibrate.vibrate('light'))} />
           <Button title="Heavy" onPress={() => Vibrate.vibrate('heavy')} />
           <Button title="medium" onPress={() => Vibrate.vibrate('medium')} />
           <Button title="rigid" onPress={() => Vibrate.vibrate('rigid')} />
           <Button title="soft" onPress={() => Vibrate.vibrate('soft')} />
-          <Button title="Regular Module" onPress={() => vibrate('medium')} />
         </View>
       </SafeAreaView>
     </SafeAreaProvider>

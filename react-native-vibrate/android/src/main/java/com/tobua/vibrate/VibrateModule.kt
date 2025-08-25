@@ -4,14 +4,19 @@ import android.os.Build
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.os.VibratorManager
-import com.facebook.react.bridge.*
-import com.facebook.react.turbomodule.core.interfaces.TurboModule
+import com.facebook.react.bridge.ReactApplicationContext
+import com.facebook.react.bridge.ReactMethod
+import com.facebook.react.bridge.Promise
+import com.facebook.react.module.annotations.ReactModule
 
-class Vibrate(private val reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext), TurboModule {
-    override fun getName() = "Vibrate"
+@ReactModule(name = VibrateModule.NAME)
+class VibrateModule(private val reactContext: ReactApplicationContext): NativeVibrateSpec(reactContext) {
+    override fun getName(): String {
+        return NAME
+    }
 
     @ReactMethod
-    fun vibrate(impact: String, promise: Promise) {
+    override fun vibrate(impact: String, promise: Promise): Unit {
         try {
             val (durationMs, amplitude) = when (impact) {
                 "light", "soft" -> 25L to 80
@@ -41,4 +46,9 @@ class Vibrate(private val reactContext: ReactApplicationContext) : ReactContextB
             promise.reject("ERR_VIBRATE", e)
         }
     }
+
+    companion object {
+        const val NAME = "Vibrate"
+    }
 }
+

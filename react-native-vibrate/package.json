@@ -15,13 +15,11 @@
   "exports": {
     ".": "./index.ts"
   },
-  "types": "./index.ts",
   "files": [
     "android",
     "ios",
     "*.ts",
-    "*.podspec",
-    "react-native.config.js"
+    "*.podspec"
   ],
   "keywords": [
     "react-native",
@@ -30,21 +28,12 @@
     "vibrate",
     "vibration"
   ],
-  "react-native": {
-    "android": {
-      "package": "com.tobua.vibrate.VibratePackage"
-    }
-  },
   "codegenConfig": {
-    "libraries": [
-      {
-        "name": "Vibrate",
-        "type": "modules",
-        "jsSrcsDir": ".",
-        "android": {
-          "javaPackageName": "com.tobua.vibrate"
-        }
-      }
-    ]
+    "name": "VibrateSpec",
+    "type": "modules",
+    "jsSrcsDir": ".",
+    "android": {
+      "javaPackageName": "com.tobua.vibrate"
+    }
   }
 }
