@@ -1,6 +1,7 @@
 {
   "name": "app",
   "scripts": {
+    "refresh": "rm -rf .numic android ios node_modules .gitignore app.json babel.config.cjs metro.config.cjs tsconfig.json && bun install",
     "start": "numic",
     "types": "tsc"
   },

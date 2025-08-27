@@ -2,7 +2,6 @@ apply plugin: 'com.android.library'
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
 
-// https://github.com/Modrigue/ReactNativeTurboModuleKotlin/blob/main/android/app/build.gradle
 react {}
 
 android {
@@ -13,11 +12,6 @@ android {
     defaultConfig {
         minSdkVersion rootProject.hasProperty('minSdkVersion') ? rootProject.minSdkVersion : 24
         targetSdkVersion rootProject.hasProperty('targetSdkVersion') ? rootProject.targetSdkVersion : 36
-        consumerProguardFiles 'consumer-rules.pro'
-    }
-
-    sourceSets {
-        main.java.srcDirs += 'src/main/java'
     }
 }
 

@@ -1,5 +1,3 @@
-import Vibrate, { type ImpactStyle } from './NativeVibrate';
+import Vibrate from './NativeVibrate'
 
-export async function vibrate(impact: ImpactStyle) {
-  return Vibrate.vibrate(impact)
-}
+export const vibrate = Vibrate.vibrate

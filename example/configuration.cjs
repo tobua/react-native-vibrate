@@ -1,19 +1,17 @@
 const path = require('path')
 
+const localPackages = ['react-native-nitro-vibrate', 'react-native-vibrate'].map(packageName => path.resolve(__dirname, '..', packageName))
+
 module.exports = {
     typescript: 'react-native',
     reactNative: { name: 'mobile', displayName: 'mobile' },
     gitignore: ['extends:numic', 'patch/*'],
     metro: {
         // Required as package is outside project root.
-        watchFolders: [path.resolve(__dirname, '../react-native-nitro-vibrate'),
-            path.resolve(__dirname, '../react-native-vibrate')
-        ],
+        watchFolders: localPackages,
         resolver: {
             // Symlinks will not work properly, link to source directly.
-            extraNodeModules:[path.join(__dirname, '../react-native-nitro-vibrate'),
-                path.join(__dirname, '../react-native-vibrate')
-            ],
+            extraNodeModules: localPackages,
             // Ensure symlinked modules are resolved (not working, no effect).
             unstable_enableSymlinks: true,
             unstable_enablePackageExports: true,

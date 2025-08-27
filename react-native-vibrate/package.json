@@ -10,6 +10,14 @@
     "react": "^19.1.1",
     "react-native": "^0.81.0"
   },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    }
+  },
   "type": "module",
   "main": "./index.ts",
   "exports": {
@@ -29,7 +37,7 @@
     "vibration"
   ],
   "codegenConfig": {
-    "name": "VibrateSpec",
+    "name": "Vibrate",
     "type": "modules",
     "jsSrcsDir": ".",
     "android": {

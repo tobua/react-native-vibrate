@@ -15,10 +15,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 40,
   },
-  image: {
-    width: 100,
-    height: 100,
-    marginTop: 40,
+  row: {
+    flexDirection: 'column'
   },
   title: {
     fontWeight: 'bold',
@@ -26,12 +24,6 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-  },
-  mode: {
-    fontSize: 16,
-  },
-  green: {
-    color: '#3add85',
   },
 })
 
@@ -45,19 +37,23 @@ export function App() {
             React Native Vibrate
           </Text>
           <Text style={styles.text}>
-            Regular
+            TurboModule
           </Text>
-          <Button title="Heavy" onPress={() => vibrate('heavy')} />
-          <Button title="Medium" onPress={() => vibrate('medium')} />
-          <Button title="Light" onPress={() => vibrate('light')} />
+          <View style={styles.row}>
+            <Button title="Heavy" onPress={() => vibrate('heavy')} />
+            <Button title="Medium" onPress={() => vibrate('medium')} />
+            <Button title="Light" onPress={() => vibrate('light')} />
+            <Button title="Rigid" onPress={() => vibrate('rigid')} />
+            <Button title="Soft" onPress={() => vibrate('soft')} />
+          </View>
           <Text style={styles.text}>
-            Nitro
+            NitroModule
           </Text>
-          <Button title="Vibrate Light" onPress={() => alert(Vibrate.vibrate('light'))} />
           <Button title="Heavy" onPress={() => Vibrate.vibrate('heavy')} />
-          <Button title="medium" onPress={() => Vibrate.vibrate('medium')} />
-          <Button title="rigid" onPress={() => Vibrate.vibrate('rigid')} />
-          <Button title="soft" onPress={() => Vibrate.vibrate('soft')} />
+          <Button title="Medium" onPress={() => Vibrate.vibrate('medium')} />
+          <Button title="Light" onPress={() => Vibrate.vibrate('light')} />
+          <Button title="Rigid" onPress={() => Vibrate.vibrate('rigid')} />
+          <Button title="Soft" onPress={() => Vibrate.vibrate('soft')} />
         </View>
       </SafeAreaView>
     </SafeAreaProvider>
