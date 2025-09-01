@@ -1,6 +1,6 @@
 const path = require('path')
 
-const localPackages = ['react-native-nitro-vibrate', 'react-native-vibrate'].map(packageName => path.resolve(__dirname, '..', packageName))
+const localPackages = ['react-native-nitro-vibrate', 'react-native-vibrate'].map(packageName => path.resolve(__dirname, packageName))
 
 module.exports = {
     typescript: 'react-native',

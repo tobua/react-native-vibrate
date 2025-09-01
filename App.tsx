@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     gap: 40,
   },
   row: {
-    flexDirection: 'column'
+    flexDirection: 'row'
   },
   title: {
     fontWeight: 'bold',
@@ -49,11 +49,13 @@ export function App() {
           <Text style={styles.text}>
             NitroModule
           </Text>
-          <Button title="Heavy" onPress={() => Vibrate.vibrate('heavy')} />
-          <Button title="Medium" onPress={() => Vibrate.vibrate('medium')} />
-          <Button title="Light" onPress={() => Vibrate.vibrate('light')} />
-          <Button title="Rigid" onPress={() => Vibrate.vibrate('rigid')} />
-          <Button title="Soft" onPress={() => Vibrate.vibrate('soft')} />
+          <View style={styles.row}>
+            <Button title="Heavy" onPress={() => Vibrate.vibrate('heavy')} />
+            <Button title="Medium" onPress={() => Vibrate.vibrate('medium')} />
+            <Button title="Light" onPress={() => Vibrate.vibrate('light')} />
+            <Button title="Rigid" onPress={() => Vibrate.vibrate('rigid')} />
+            <Button title="Soft" onPress={() => Vibrate.vibrate('soft')} />
+          </View>
         </View>
       </SafeAreaView>
     </SafeAreaProvider>

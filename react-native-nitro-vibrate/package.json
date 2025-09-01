@@ -18,6 +18,14 @@
     "react-native": "*",
     "react-native-nitro-modules": "*"
   },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    }
+  },
   "type": "module",
   "main": "./index.ts",
   "exports": {

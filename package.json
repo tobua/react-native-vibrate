@@ -12,14 +12,14 @@
   },
   "dependencies": {
     "react": "19.1.0",
-    "react-native": "^0.81.0",
-    "react-native-nitro-modules": "^0.28.1",
-    "react-native-nitro-vibrate": "../react-native-nitro-vibrate",
+    "react-native": "^0.81.1",
+    "react-native-nitro-modules": "^0.29.1",
+    "react-native-nitro-vibrate": "./react-native-nitro-vibrate",
     "react-native-safe-area-context": "^5.6.1",
-    "react-native-vibrate": "../react-native-vibrate"
+    "react-native-vibrate": "./react-native-vibrate"
   },
   "devDependencies": {
-    "@types/react": "^19.1.11",
+    "@types/react": "^19.1.12",
     "@types/react-native": "^0.73.0",
     "numic": "^5.5.2",
     "typescript": "^5.9.2",
