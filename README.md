@@ -1,5 +1,7 @@
 # react-native-vibrate
 
+<img align="right" src="https://github.com/tobua/react-native-vibrate/raw/main/logo.png" width="30%" alt="Vibrate Logo" />
+
 Access the full native haptics interface on iOS and Android.
 
 ```ts

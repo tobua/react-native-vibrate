@@ -42,6 +42,13 @@
     "jsSrcsDir": ".",
     "android": {
       "javaPackageName": "com.tobua.vibrate"
+    },
+    "ios": {
+      "modules": {
+        "Vibrate": {
+          "className": "Vibrate"
+        }
+      }
     }
   }
 }
