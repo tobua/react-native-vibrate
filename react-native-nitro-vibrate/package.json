@@ -34,6 +34,7 @@
   "types": "./index.ts",
   "files": [
     "*.ts",
+    "src",
     "nitrogen",
     "android",
     "ios",

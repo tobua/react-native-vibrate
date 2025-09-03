@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 import NitroModules
 
-class HybridVibrate : HybridVibrateSpec {
+class HybridVibrate : HybridMyVibrateSpec {
   public func vibrate(impact: ImpactStyle) throws -> String {
     // Create the appropriate feedback generator based on impact style
     let generator: UIImpactFeedbackGenerator

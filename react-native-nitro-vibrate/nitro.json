@@ -9,7 +9,7 @@
     "androidCxxLibName": "NitroVibrate"
   },
   "autolinking": {
-    "Vibrate": {
+    "MyVibrate": {
       "swift": "HybridVibrate",
       "kotlin": "HybridVibrate"
     }

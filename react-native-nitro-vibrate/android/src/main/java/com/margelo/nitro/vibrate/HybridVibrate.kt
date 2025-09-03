@@ -11,7 +11,7 @@ import com.margelo.nitro.NitroModules
 
 @Keep
 @DoNotStrip
-class HybridVibrate: HybridVibrateSpec() {
+class HybridVibrate: HybridMyVibrateSpec() {
     override fun vibrate(impact: ImpactStyle): String {
         val context = NitroModules.applicationContext
             ?: return "ReactApplicationContext is null!"
